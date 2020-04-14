@@ -36,7 +36,20 @@ void main() {
     }
     submitButton.disabled = true;
 
-    // TODO: Submit name field to backend
+    try {
+      // prevent page from reloading
+      event.preventDefault();
+      var response = await HttpRequest.postFormData('http://localhost:4040/signin', {
+        'username': userNameField.text
+      });
+      signInForm.hidden = true;
+      notificationBox.hidden = false;
+      notificationBox.text = 'Success';
+    } catch (e) {
+      submitButton
+        ..disabled = false
+        ..text = 'Failed to join chat. Try again?';
+    }
     // TODO: Handle success response
     // TODO: Handle failure responses
   });
