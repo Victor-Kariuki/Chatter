@@ -9,12 +9,55 @@
     <title>chatter</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
+    <!-- bulma cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <!-- fontawesome cdn -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script defer src="main.dart.js"></script>
 </head>
 
 <body>
 
-  <div id="output"></div>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-two-fifths">
+            <h1 class="title is-1">Chatter</h1>
+
+            <form action="" method="post" id="signInForm">
+              <div class="field">
+                <label for="#username" class="label">Please enter your name: </label>
+                <div class="control is-expanded has-icons-left">
+                  <input type="text" class="input" id="username" placeholder="Enter your name">
+                  <span class="icon is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <p class="help"></p>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <button class="button is-dark" type="submit">Join Chat</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="notification" hidden>
+              <button class="delete"></button>
+            </div>
+          </div>
+
+          <div class="column">
+            <figure class="image">
+              <img src="assets/images/chatter.png" alt="">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
